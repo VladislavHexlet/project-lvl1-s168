@@ -1,10 +1,11 @@
 {
   "name": "project-lvl1-s168vladislav",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "",
   "main": "./dist/bin/brain-games.js",
   "scripts": {
     "babel-node": "babel-node",
+    "eslint": "eslint",
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
     "prepublishOnly": "npm run build"
   },
@@ -14,11 +15,16 @@
   "author": "Vladislav Prokhorov",
   "license": "ISC",
   "devDependencies": {
-    "readline-sync": "*",
     "babel-cli": "*",
     "babel-core": "*",
     "babel-preset-env": "*",
-    "babel-preset-stage-0": "*"
+    "babel-preset-stage-0": "*",
+    "babel-eslint": "*",
+    "eslint": "^4.11.0",
+    "eslint-config-airbnb-base": "*",
+    "eslint-plugin-import": "*"
   },
-  "dependencies": {}
+  "dependencies": {
+    "readline-sync": "*"
+  }
 }
