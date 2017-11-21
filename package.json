@@ -14,6 +14,7 @@
   "author": "Vladislav Prokhorov",
   "license": "ISC",
   "devDependencies": {
+    "readline-sync": "*",
     "babel-cli": "*",
     "babel-core": "*",
     "babel-preset-env": "*",
