@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-const print = (textForGame) => {
+const runIntruductionForUser = (textForGame) => {
   console.log('Welcome to the Brain Games!');
   if (textForGame) {
     console.log(`${textForGame}\n`);
@@ -12,27 +12,21 @@ const print = (textForGame) => {
 
 const getRandomNumber = () => Math.round(Math.random() * 100);
 
-const playGame = () => {
-  const name = print('Answer "yes" if number even otherwise answer "no".');
-  let game = true;
-  let numberOfTries = 0;
-
-  while (game) {
-    numberOfTries += 1;
-    const randomNumber = getRandomNumber();
-    const even = (randomNumber % 2) === 0 ? 'yes' : 'no';
-    console.log(`Question: ${randomNumber}`);
-    const answer = readlineSync.question('Your answer: ');
-    if ((answer === 'yes' && even === 'yes') || (answer === 'no' && even === 'no')) {
-      console.log('Correct!');
-      if (numberOfTries === 3) {
-        console.log(`Congratulations, ${name}!`);
-        game = false;
-      }
-    } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${even}'.Let's try again, ${name}!`);
-      game = false;
+const checkUserAnswer = (questionState, correctAnswer, userName, currentNumberOfTries) => {
+  let gameSession = true;
+  console.log(`Question: ${questionState}`);
+  const answer = readlineSync.question('Your answer: ');
+  if (answer === correctAnswer) {
+    console.log('Correct!');
+    if (currentNumberOfTries === 3) {
+      console.log(`Congratulations, ${userName}!`);
+      gameSession = false;
     }
+  } else {
+    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.Let's try again, ${userName}!`);
+    gameSession = false;
   }
+  return gameSession;
 };
-export { print, playGame };
+
+export { runIntruductionForUser, checkUserAnswer, getRandomNumber };
