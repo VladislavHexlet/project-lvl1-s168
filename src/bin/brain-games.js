@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import print from '..';
+import { print } from '..';
 
 print();

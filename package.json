@@ -1,6 +1,6 @@
 {
   "name": "project-lvl1-s168vladislav",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "",
   "main": "./dist/bin/brain-games.js",
   "scripts": {
@@ -10,6 +10,7 @@
     "prepublishOnly": "npm run build"
   },
   "bin": {
+    "brain-even": "dist/bin/brain-even.js",
     "brain-games": "dist/bin/brain-games.js"
   },
   "author": "Vladislav Prokhorov",
