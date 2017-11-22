@@ -1,9 +1,9 @@
 import readlineSync from 'readline-sync';
 
-const print = (forGame) => {
+const print = (textForGame) => {
   console.log('Welcome to the Brain Games!');
-  if (forGame) {
-    console.log('Answer "yes" if number even otherwise answer "no".\n');
+  if (textForGame) {
+    console.log(`${textForGame}\n`);
   }
   const name = readlineSync.question('May I have your name: ');
   console.log(`Hello, ${name}\n`);
@@ -13,7 +13,7 @@ const print = (forGame) => {
 const getRandomNumber = () => Math.round(Math.random() * 100);
 
 const playGame = () => {
-  const name = print(true);
+  const name = print('Answer "yes" if number even otherwise answer "no".');
   let game = true;
   let numberOfTries = 0;
 
