@@ -1,3 +1,5 @@
 /node_modules/
 /dist/
 /.DS_Store
+/src/.DS_Store 
+/src/games/.DS_Store 
