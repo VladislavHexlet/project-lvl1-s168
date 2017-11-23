@@ -1,4 +1,3 @@
-/* eslint no-eval: 0 */
 import { checkUserAnswer } from '..';
 
 const getRandomExpression = () => {
@@ -10,8 +9,18 @@ const getRandomExpression = () => {
 };
 
 const computeСorrectResult = (randomExpression) => {
-  const result = eval(randomExpression).toString();
-  return result;
+  const splitedExpression = randomExpression.split(' ');
+  let result;
+  if (splitedExpression[1] === '+') {
+    result = Number(splitedExpression[0]) + Number(splitedExpression[2]);
+  }
+  if (splitedExpression[1] === '-') {
+    result = Number(splitedExpression[0]) - Number(splitedExpression[2]);
+  }
+  if (splitedExpression[1] === '*') {
+    result = Number(splitedExpression[0]) * Number(splitedExpression[2]);
+  }
+  return result.toString();
 };
 
 export default () => {

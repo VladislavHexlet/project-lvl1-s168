@@ -20,7 +20,6 @@ const checkUserAnswer = (fnQuestionState, computeCorrectAnswer, introductionTxt)
     console.log(`Question: ${questionState}`);
     const answer = readlineSync.question('Your answer: ');
     if (answer === correctAnswer) {
-      console.log('aaa');
       console.log('Correct!');
       if (currentNumberOfTries === 3) {
         console.log(`Congratulations, ${userName}!`);
