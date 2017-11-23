@@ -1,14 +1,13 @@
-import { runIntruductionForUser, checkUserAnswer, getRandomNumber } from '..';
+import { checkUserAnswer } from '..';
+
+const computeCorrectAnswer = (randomNumberForQuestion) => {
+  const result = (randomNumberForQuestion % 2) === 0 ? 'yes' : 'no';
+  return result;
+};
+
+const getRandomNumber = () => Math.round(Math.random() * 100);
 
 export default () => {
-  const name = runIntruductionForUser('Answer "yes" if number even otherwise answer "no".');
-  let numberOfTries = 0;
-  let gameSession = true;
-
-  while (gameSession) {
-    numberOfTries += 1;
-    const randomNumber = getRandomNumber();
-    const even = (randomNumber % 2) === 0 ? 'yes' : 'no';
-    gameSession = checkUserAnswer(randomNumber, even, name, numberOfTries);
-  }
+  const IntruductionForUser = 'Answer "yes" if number even otherwise answer "no".';
+  checkUserAnswer(getRandomNumber, computeCorrectAnswer, IntruductionForUser);
 };

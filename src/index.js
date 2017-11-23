@@ -10,23 +10,29 @@ const runIntruductionForUser = (textForGame) => {
   return name;
 };
 
-const getRandomNumber = () => Math.round(Math.random() * 100);
+const checkUserAnswer = (fnQuestionState, computeCorrectAnswer, introductionTxt) => {
+  const userName = runIntruductionForUser(introductionTxt);
 
-const checkUserAnswer = (questionState, correctAnswer, userName, currentNumberOfTries) => {
-  let gameSession = true;
-  console.log(`Question: ${questionState}`);
-  const answer = readlineSync.question('Your answer: ');
-  if (answer === correctAnswer) {
-    console.log('Correct!');
-    if (currentNumberOfTries === 3) {
-      console.log(`Congratulations, ${userName}!`);
-      gameSession = false;
+  const iter = (currentNumberOfTries) => {
+    const questionState = fnQuestionState();
+    const correctAnswer = computeCorrectAnswer(questionState);
+
+    console.log(`Question: ${questionState}`);
+    const answer = readlineSync.question('Your answer: ');
+    if (answer === correctAnswer) {
+      console.log('aaa');
+      console.log('Correct!');
+      if (currentNumberOfTries === 3) {
+        console.log(`Congratulations, ${userName}!`);
+        return true;
+      }
+    } else {
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.Let's try again, ${userName}!`);
+      return true;
     }
-  } else {
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.Let's try again, ${userName}!`);
-    gameSession = false;
-  }
-  return gameSession;
+    return iter(currentNumberOfTries + 1);
+  };
+  iter(1);
 };
 
-export { runIntruductionForUser, checkUserAnswer, getRandomNumber };
+export { runIntruductionForUser, checkUserAnswer };
