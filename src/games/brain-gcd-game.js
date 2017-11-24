@@ -1,4 +1,4 @@
-import { checkUserAnswer } from '..';
+import { runGameEngine } from '..';
 
 const getTwoRandomNumbers = () => {
   const leftLiteral = Math.round(Math.random() * 100);
@@ -31,5 +31,5 @@ const questionAnswerGenerator = () => {
 
 export default () => {
   const intruductionForUser = 'Find the greatest common divisor of given numbers.';
-  checkUserAnswer(questionAnswerGenerator, intruductionForUser);
+  runGameEngine(questionAnswerGenerator, intruductionForUser);
 };

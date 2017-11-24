@@ -1,4 +1,4 @@
-import { checkUserAnswer } from '..';
+import { runGameEngine } from '..';
 
 const computeEvenOrNot = (randomNumberForQuestion) => {
   const result = (randomNumberForQuestion % 2) === 0 ? 'yes' : 'no';
@@ -15,5 +15,5 @@ const questionAnswerGenerator = () => {
 
 export default () => {
   const intruductionForUser = 'Answer "yes" if number even otherwise answer "no".';
-  checkUserAnswer(questionAnswerGenerator, intruductionForUser);
+  runGameEngine(questionAnswerGenerator, intruductionForUser);
 };

@@ -1,4 +1,4 @@
-import { checkUserAnswer } from '..';
+import { runGameEngine } from '..';
 
 const getRandomNumber = () => Math.round(Math.random() * 100);
 
@@ -36,5 +36,5 @@ const questionAnswerGenerator = () => {
 
 export default () => {
   const intruductionForUser = 'Balance the given number.';
-  checkUserAnswer(questionAnswerGenerator, intruductionForUser);
+  runGameEngine(questionAnswerGenerator, intruductionForUser);
 };

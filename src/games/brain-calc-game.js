@@ -1,4 +1,4 @@
-import { checkUserAnswer } from '..';
+import { runGameEngine } from '..';
 
 const getRandomExpression = () => {
   const leftLiteral = Math.round(Math.random() * 100);
@@ -31,5 +31,5 @@ const questionAnswerGenerator = () => {
 
 export default () => {
   const intruductionForUser = 'What is the result of the expression?';
-  return checkUserAnswer(questionAnswerGenerator, intruductionForUser);
+  return runGameEngine(questionAnswerGenerator, intruductionForUser);
 };

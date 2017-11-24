@@ -10,7 +10,7 @@ const runIntruductionForUser = (textForGame) => {
   return name;
 };
 
-const checkUserAnswer = (questionAnswerGenerator, introductionTxt) => {
+const runGameEngine = (questionAnswerGenerator, introductionTxt) => {
   const userName = runIntruductionForUser(introductionTxt);
 
   const iter = (currentNumberOfTries) => {
@@ -35,4 +35,4 @@ const checkUserAnswer = (questionAnswerGenerator, introductionTxt) => {
   iter(1);
 };
 
-export { runIntruductionForUser, checkUserAnswer };
+export { runIntruductionForUser, runGameEngine };
