@@ -3,7 +3,7 @@ import { runGameEngine } from '..';
 const getRandomNumber = () => Math.round(Math.random() * 100);
 
 const isPrime = (number) => {
-  if (number <= 2) {
+  if (number < 2) {
     return false;
   }
   const iter = (n) => {
