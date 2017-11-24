@@ -8,6 +8,6 @@ const computeCorrectAnswer = (randomNumberForQuestion) => {
 const getRandomNumber = () => Math.round(Math.random() * 100);
 
 export default () => {
-  const IntruductionForUser = 'Answer "yes" if number even otherwise answer "no".';
-  checkUserAnswer(getRandomNumber, computeCorrectAnswer, IntruductionForUser);
+  const intruductionForUser = 'Answer "yes" if number even otherwise answer "no".';
+  checkUserAnswer(getRandomNumber, computeCorrectAnswer, intruductionForUser);
 };

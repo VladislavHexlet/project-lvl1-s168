@@ -1,6 +1,6 @@
 {
   "name": "project-lvl1-s168vladislav",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "",
   "main": "./dist/bin/brain-games.js",
   "scripts": {
@@ -10,6 +10,7 @@
     "prepublishOnly": "npm run build"
   },
   "bin": {
+    "brain-balance": "dist/bin/brain-balance.js",
     "brain-gcd": "dist/bin/brain-gcd.js",
     "brain-calc": "dist/bin/brain-calc.js",
     "brain-even": "dist/bin/brain-even.js",

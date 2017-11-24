@@ -15,10 +15,10 @@ const checkUserAnswer = (fnQuestionState, computeCorrectAnswer, introductionTxt)
 
   const iter = (currentNumberOfTries) => {
     const questionState = fnQuestionState();
-    const correctAnswer = computeCorrectAnswer(questionState);
 
     console.log(`Question: ${questionState}`);
     const answer = readlineSync.question('Your answer: ');
+    const correctAnswer = computeCorrectAnswer(questionState);
     if (answer === correctAnswer) {
       console.log('Correct!');
       if (currentNumberOfTries === 3) {

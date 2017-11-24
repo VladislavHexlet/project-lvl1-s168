@@ -24,6 +24,6 @@ const computeСorrectResult = (randomExpression) => {
 };
 
 export default () => {
-  const IntruductionForUser = 'Find the greatest common divisor of given numbers.';
-  checkUserAnswer(getTwoRandomNumbers, computeСorrectResult, IntruductionForUser);
+  const intruductionForUser = 'Find the greatest common divisor of given numbers.';
+  checkUserAnswer(getTwoRandomNumbers, computeСorrectResult, intruductionForUser);
 };

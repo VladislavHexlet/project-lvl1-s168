@@ -9,21 +9,21 @@ const getRandomExpression = () => {
 };
 
 const computeСorrectResult = (randomExpression) => {
-  const splitedExpression = randomExpression.split(' ');
-  let result;
-  if (splitedExpression[1] === '+') {
-    result = Number(splitedExpression[0]) + Number(splitedExpression[2]);
+  const splitExpression = randomExpression.split(' ');
+  switch (splitExpression[1]) {
+    case '+':
+      return (Number(splitExpression[0]) + Number(splitExpression[2])).toString();
+    case '-':
+      return (Number(splitExpression[0]) - Number(splitExpression[2])).toString();
+    case '*':
+      return (Number(splitExpression[0]) * Number(splitExpression[2])).toString();
+    default:
+      break;
   }
-  if (splitedExpression[1] === '-') {
-    result = Number(splitedExpression[0]) - Number(splitedExpression[2]);
-  }
-  if (splitedExpression[1] === '*') {
-    result = Number(splitedExpression[0]) * Number(splitedExpression[2]);
-  }
-  return result.toString();
+  return false;
 };
 
 export default () => {
-  const IntruductionForUser = 'What is the result of the expression?';
-  return checkUserAnswer(getRandomExpression, computeСorrectResult, IntruductionForUser);
+  const intruductionForUser = 'What is the result of the expression?';
+  return checkUserAnswer(getRandomExpression, computeСorrectResult, intruductionForUser);
 };
