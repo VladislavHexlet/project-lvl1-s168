@@ -8,7 +8,7 @@ const getRandomExpression = () => {
   return leftLiteral.toString() + operator + rightLiteral.toString();
 };
 
-const computeСorrectResult = (randomExpression) => {
+const runCalculator = (randomExpression) => {
   const splitExpression = randomExpression.split(' ');
   switch (splitExpression[1]) {
     case '+':
@@ -23,7 +23,13 @@ const computeСorrectResult = (randomExpression) => {
   return false;
 };
 
+const questionAnswerGenerator = () => {
+  const randomExpression = getRandomExpression();
+  const result = runCalculator(randomExpression);
+  return [randomExpression, result];
+};
+
 export default () => {
   const intruductionForUser = 'What is the result of the expression?';
-  return checkUserAnswer(getRandomExpression, computeСorrectResult, intruductionForUser);
+  return checkUserAnswer(questionAnswerGenerator, intruductionForUser);
 };

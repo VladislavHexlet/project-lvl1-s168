@@ -2,7 +2,7 @@ import { checkUserAnswer } from '..';
 
 const getRandomNumber = () => Math.round(Math.random() * 100);
 
-const computeCorrectAnswer = (randomNumberForQuestion) => {
+const computeBalanceNumber = (randomNumberForQuestion) => {
   const randomNumber = randomNumberForQuestion.toString();
   const randomNumberInArray = randomNumber.split('');
   const intRandomNumber = randomNumberInArray.map(el => Number(el));
@@ -28,7 +28,13 @@ const computeCorrectAnswer = (randomNumberForQuestion) => {
   return iter();
 };
 
+const questionAnswerGenerator = () => {
+  const randomNumber = getRandomNumber();
+  const result = computeBalanceNumber(randomNumber);
+  return [randomNumber, result];
+};
+
 export default () => {
   const intruductionForUser = 'Balance the given number.';
-  checkUserAnswer(getRandomNumber, computeCorrectAnswer, intruductionForUser);
+  checkUserAnswer(questionAnswerGenerator, intruductionForUser);
 };

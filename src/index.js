@@ -10,15 +10,16 @@ const runIntruductionForUser = (textForGame) => {
   return name;
 };
 
-const checkUserAnswer = (fnQuestionState, computeCorrectAnswer, introductionTxt) => {
+const checkUserAnswer = (questionAnswerGenerator, introductionTxt) => {
   const userName = runIntruductionForUser(introductionTxt);
 
   const iter = (currentNumberOfTries) => {
-    const questionState = fnQuestionState();
+    const questionAndAnswer = questionAnswerGenerator();
+    const questionState = questionAndAnswer[0];
+    const correctAnswer = questionAndAnswer[1];
 
     console.log(`Question: ${questionState}`);
     const answer = readlineSync.question('Your answer: ');
-    const correctAnswer = computeCorrectAnswer(questionState);
     if (answer === correctAnswer) {
       console.log('Correct!');
       if (currentNumberOfTries === 3) {

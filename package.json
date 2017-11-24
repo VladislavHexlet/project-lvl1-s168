@@ -1,6 +1,6 @@
 {
   "name": "project-lvl1-s168vladislav",
-  "version": "0.0.16",
+  "version": "0.0.18",
   "description": "",
   "main": "./dist/bin/brain-games.js",
   "scripts": {

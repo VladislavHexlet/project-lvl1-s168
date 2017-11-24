@@ -23,7 +23,13 @@ const computeСorrectResult = (randomExpression) => {
   return result.toString();
 };
 
+const questionAnswerGenerator = () => {
+  const randomNumbers = getTwoRandomNumbers();
+  const result = computeСorrectResult(randomNumbers);
+  return [randomNumbers, result];
+};
+
 export default () => {
   const intruductionForUser = 'Find the greatest common divisor of given numbers.';
-  checkUserAnswer(getTwoRandomNumbers, computeСorrectResult, intruductionForUser);
+  checkUserAnswer(questionAnswerGenerator, intruductionForUser);
 };
